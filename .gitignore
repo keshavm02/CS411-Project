@@ -1,1 +1,4 @@
 .DS_Store
+config
+.idea
+node_modules
