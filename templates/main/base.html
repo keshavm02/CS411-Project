@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - Journalism App Placeholder Title</title>
+
+        <link rel="shortcut icon" type="image/png" href="{% static 'main/images/icons/favicon.ico' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "main/css/primary.css" %}"/>
+        <script src="{% static "main/js/primary.js" %}"></script>
+    </head>
+    <body>
+        <div id="page-header">
+            {% if request.user.is_authenticated %}
+                {{ request.user }}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login/Register</a>
+            {% endif %}
+        </div>
+        <div id="page-content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        <div id="page-footer">
+
+        </div>
+    </body>
+</html>
