@@ -1,2 +1,6 @@
 .DS_Store
-/venv/
+venv/
+env/
+config
+node_modules/
+.idea/
