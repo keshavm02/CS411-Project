@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import yaml
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # # below added from Chew
+    # 'django.contrib.sites',
+    # 'templates',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
+    'templates',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +129,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Lamas
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+ )
+
+creds = yaml.safe_load(open("creds.yaml", "r"))
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = creds["SOCIAL_AUTH_GOOGLE_OAUTH2_KEY"]
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = creds["SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET"]
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
