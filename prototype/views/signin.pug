@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title title
+    link(rel='stylesheet', href='/stylesheets/resets.css')
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/signin.css')
+    
+  body
+    .container
+        .left
+            nav 
+                h1.title 
+                    a(href="/") Pravda
+            h2 Good to see you again
+        .right
+            img(src="/images/chat.svg" alt="chat")
+            h3 Ready to Get Started?
+            button(type="button" name="send") 
+                //- img(src="/images/google.png" alt="chat") 
+                img(src="/images/google.png" alt="chat")
+                p Sign in with Google
+            footer
+                small.copyright © 2020 
+                    span Pravda

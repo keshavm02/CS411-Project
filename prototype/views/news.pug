@@ -1,10 +1,36 @@
 extends layout
 
+block head
+  link(rel='stylesheet', href='/stylesheets/news.css')
+
 block content
-    h1= title
-    h2 #{headline}
-    h3 Source: #{source}
-    h3 Author: #{author}
-    h4 URL:
-        a(href=link)  Go to link
-    p Description: #{body}
+    .container
+        h1 Resut: 
+        .block.first
+            h2.label= title 
+            span.data #{headline}
+        .block
+            h3.label Source: 
+            span.data #{source}
+        .block
+            h3.label Author: 
+            span.data #{author}
+        .block
+            h4.label URL:
+            span.data 
+                a(href=link, target="blank") link to article
+        .block.last
+            p.label Description: 
+            span.data #{body}
+
+        #search 
+            p Search again?  
+            p.examples Here are some examples to try: 
+                span abc-news, 
+                span fox-news, 
+                span cnn, 
+                span bbc-news 
+            form(method='post', action="http://localhost:3000/")
+                label(type="text", name="news_outlet", id="news_outlet") News outlet name:
+                input(type="text", name="news_outlet", id="news_outlet")
+                button(type="submit") Submit
