@@ -3,6 +3,9 @@ extends layout
 block head
   link(rel='stylesheet', href='/stylesheets/wrongName.css')
 
+prepend nav
+  - let whichNav = 2
+
 block content
     .container
         .text

@@ -3,6 +3,9 @@ extends layout
 block head
   link(rel='stylesheet', href='/stylesheets/news.css')
 
+prepend nav
+  - let whichNav = 2
+
 block content
     .container
         h1 Resut: 
