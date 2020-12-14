@@ -8,6 +8,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const signInRouter = require("./routes/signin");
 const userInfoRouter = require("./routes/userInfo");
+const googleOauthRouter = require("./routes/googleOauth");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/signin", signInRouter);
 app.use("/userInfo", userInfoRouter);
+app.use("/googleOauth", googleOauthRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
