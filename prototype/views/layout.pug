@@ -9,10 +9,15 @@ html
     block head
     
   body
-    nav 
-      h1.title 
-        a(href="/") Pravda
-      a(href="/signin") Sign In
+    block nav
+      nav 
+        h1.title 
+          a(href="/") Pravda
+        case whichNav
+          when 1
+            a(href="/") Sign out
+          when 2
+            a(href="/signin") Sign In
     block content
     footer 
       small.copyright © 2020 
