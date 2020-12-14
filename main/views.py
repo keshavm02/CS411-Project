@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout, login
+from django.http import JsonResponse
 
 
 def index(request):
@@ -30,18 +31,16 @@ def search(request):
     return render(request, 'main/search.html', context)
 
 
-def auth(request):
-    if request.method == 'POST':
-        try:
-            user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
-            if user:
-                login(request, user)
-        except Exception as e:
-            pass
-
-    context = {
-    }
-    return render(request, 'main/login.html', context)
+def user_auth(request):
+    if request.user.is_authenticated:
+        data = {
+            'validated': True
+        }
+    else:
+        data = {
+            'validated': False
+        }
+    return JsonResponse(data)
 
 
 def deauth(request):
