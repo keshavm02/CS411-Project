@@ -1,5 +1,27 @@
 extends layout
 
+block head
+  link(rel='stylesheet', href='/stylesheets/home.css')
+
+prepend nav
+  - let whichNav = 2
+
 block content
-  h1= title
-  p Welcome to #{title}
+  .header
+    h1.top_message Welcome to Pravda
+    p The Rate-My-Journalist platform you didn't know you needed.
+    a(href="#search")
+      p Get Started
+      svg(width="70", height="30", viewBox="0 0 70 30", fill="none", xmlns="http://www.w3.org/2000/svg")
+        path(d="M2 2L35 28L68 2", stroke="#3a5199", stroke-width="4", stroke-linecap="round", stroke-linejoin="round")
+  #search 
+    p Enter a news outlet name. 
+    p.examples Here are some examples to try: 
+      span abc-news, 
+      span fox-news, 
+      span cnn, 
+      span bbc-news 
+    form(method='post', action="http://localhost:3000/")
+      label(type="text", name="news_outlet", id="news_outlet") News outlet name:
+      input(type="text", name="news_outlet", id="news_outlet")
+      button(type="submit") Submit

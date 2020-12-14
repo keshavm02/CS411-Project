@@ -1,0 +1,40 @@
+body {
+  min-height: 100vh;
+  position: relative;
+  font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif;
+}
+nav {
+  display: flex;
+  padding: 2rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+}
+.title a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3a5199;
+}
+nav a {
+  color: #3a5199;
+  font-weight: 600;
+}
+.title:hover {
+  cursor: pointer;
+}
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  margin-top: 4rem;
+  padding: 1.5rem;
+  background-color: #eee;
+  color: #3a5199;
+  font-size: 0.8rem;
+}
+footer span {
+  font-weight: 800;
+  font-size: 0.9rem;
+}
