@@ -1,5 +1,21 @@
 extends layout
 
+block head
+  link(rel='stylesheet', href='/stylesheets/wrongName.css')
+
 block content
-    h1 Whoops
-    p You entered an incorrect name.
+    .container
+        .text
+            h1 Whoops
+            p Looks like you entered an invalid name.
+        #search 
+            p Try again! 
+            p.examples Here are some examples to try: 
+                span abc-news, 
+                span fox-news, 
+                span cnn, 
+                span bbc-news 
+            form(method='post', action="http://localhost:3000/")
+                label(type="text", name="news_outlet", id="news_outlet") News outlet name:
+                input(type="text", name="news_outlet", id="news_outlet")
+                button(type="submit") Submit
