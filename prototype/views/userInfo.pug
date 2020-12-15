@@ -9,10 +9,10 @@ prepend nav
 block content
     .container
         .header
-            h1 Welcome Name,
+            h1 Welcome #{firstName}
         .favs
             h3 Your favorite news outlets: 
-            p abc-news bbc cnn
+            p #{fav_orgs}
         form(method='post', action="http://localhost:3000/")
             label(type="text", name="news_outlet", id="news_outlet") Add to your favorite news outlets:
             textarea(name="news_outlet", id="news_outlet", rows="7")
