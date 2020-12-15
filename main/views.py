@@ -34,7 +34,13 @@ def search(request):
 def user_auth(request):
     if request.user.is_authenticated:
         data = {
-            'validated': True
+            'validated': True,
+            'username': request.user.username,
+            'first_name': request.user.first_name,
+            'last_name': request.user.last_name,
+            'email': request.user.email,
+            'fav_orgs': ['cnn', 'abc-news', 'bbc-news'],
+            'data-field': 'cnn, abc-news, bbc-news'
         }
     else:
         data = {
