@@ -1,7 +1,19 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title title
+    link(rel='stylesheet', href='/stylesheets/resets.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet")
+    block head
+    
   body
+    nav 
+      h1.title 
+        a(href="/") Pravda
+      a(href="/signin") Sign In
     block content
+    footer 
+      small.copyright © 2020 
+        span Pravda

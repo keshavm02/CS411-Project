@@ -1,0 +1,109 @@
+/* Header Container*/
+.header {
+  /* background-color: #3a5199; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+  position: relative;
+  background-image: url("/images/office_img3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header Text */
+.top_message {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #3a5199;
+  width: 50%;
+  text-align: center;
+  line-height: 6rem;
+}
+.header p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Header Get Started Button */
+.header a {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header a p {
+  color: #3a5199;
+  font-weight: 500;
+}
+.header svg {
+  margin-top: 1rem;
+}
+
+/* Search Container */
+#search {
+  padding: 6rem 3rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Search Text */
+#search p:first-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.examples {
+  margin: 1rem 0 2rem;
+}
+span {
+  font-weight: 600;
+}
+
+/* Search Form */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+input {
+  border-radius: 50px;
+  padding: 0.75rem 1rem;
+  background-color: #eee;
+  border: none;
+  margin: 1rem 0 1.5rem;
+}
+input:focus {
+  outline: none;
+}
+button {
+  border-radius: 50px;
+  color: #444;
+  font-weight: 500;
+  background-color: #eee;
+  border: 2px solid #3a5199;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  width: 35%;
+  margin: 0 auto;
+}
+button:hover {
+  background-color: #3a5199;
+  color: white;
+  transition: color, background-color 0.5s ease-in-out;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
+@media (max-width: 425px) {
+  .top_message {
+    width: 100%;
+  }
+}
