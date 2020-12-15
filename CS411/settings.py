@@ -135,7 +135,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'WmoOorKF01oxaM5mgbD6T02I'
 
 LOGIN_URL = '/auth/login/google-oauth2/'
 LOGIN_REDIRECT_URL = '/auth-response'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'http://localhost:3000/'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 

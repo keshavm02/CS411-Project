@@ -5,42 +5,66 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout, login
 from django.http import JsonResponse
+from django import forms
+
+from .models import *
 
 
 def index(request):
     context = {
+
     }
     return render(request, 'main/index.html', context)
 
 
 def author(request):
-    context = {
+    data = {
+
     }
-    return render(request, 'main/author.html', context)
+    return JsonResponse(data)
 
 
 def article(request):
-    context = {
+    data = {
+
     }
-    return render(request, 'main/article.html', context)
+    return JsonResponse(data)
 
 
 def search(request):
-    context = {
+    data = {
+
     }
-    return render(request, 'main/search.html', context)
+    return JsonResponse(data)
 
 
 def user_auth(request):
+    class UserForm(forms.Form):
+        validated = forms.BooleanField()
+        username = forms.CharField()
+        first_name = forms.CharField()
+        last_name = forms.CharField()
+        email = forms.CharField()
+        fav_orgs = forms.CharField()
+
     if request.user.is_authenticated:
         data = {
-            'validated': True
+            'validated': True,
+            'username': request.user.username,
+            'first_name': request.user.first_name,
+            'last_name': request.user.last_name,
+            'email': request.user.email,
+            'fav_orgs': 'cnn, abc-news, bbc-news'
         }
     else:
         data = {
             'validated': False
         }
-    return JsonResponse(data)
+    form = UserForm(data)
+    context = {
+        'form': form
+    }
+    return render(request, 'main/authentication.html', context)
 
 
 def deauth(request):

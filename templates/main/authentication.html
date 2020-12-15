@@ -1,0 +1,13 @@
+<html>
+<body>
+    Redirecting back to Pravda
+    <form action="http://localhost:3000/userInfo" method="post" name="auth-reponse" style="display: none">
+        {{ form }}
+    </form>
+</body>
+<script>
+    window.onload = function () {
+        console.log(document.forms[0].submit())
+    }
+</script>
+</html>
