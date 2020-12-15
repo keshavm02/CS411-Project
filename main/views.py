@@ -45,6 +45,7 @@ def user_auth(request):
         first_name = forms.CharField()
         last_name = forms.CharField()
         email = forms.CharField()
+        fav_orgs = forms.CharField()
 
     if request.user.is_authenticated:
         data = {
@@ -53,6 +54,7 @@ def user_auth(request):
             'first_name': request.user.first_name,
             'last_name': request.user.last_name,
             'email': request.user.email,
+            'fav_orgs': 'cnn, abc-news, bbc-news'
         }
     else:
         data = {
