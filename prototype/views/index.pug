@@ -3,6 +3,9 @@ extends layout
 block head
   link(rel='stylesheet', href='/stylesheets/home.css')
 
+prepend nav
+  - let whichNav = 2
+
 block content
   .header
     h1.top_message Welcome to Pravda
