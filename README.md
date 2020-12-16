@@ -8,6 +8,9 @@
 - Soo Whan Park (Eric)
 - Zhitao Liu (Toby)
 
+## Project Video
+Please navigate to the "VIDEO" directory to watch our project video.
+
 ## Project Info
 - APIs
   - NewsAPI to get latest news articles
