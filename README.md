@@ -17,4 +17,5 @@ Please navigate to the "VIDEO" directory to watch our project video.
   - DiffBot API to extract the author of the news article provided by the NewsAPI
 - Frontend: JADE PUG with JS
 - Backend: Django (Python)
+- Oauth: Google
 - DB: SQLite
